@@ -1,0 +1,24 @@
+{
+    "actualy balance": 802.0,
+    "statistics": {
+        "house goods": 1699.0,
+        "food": 0,
+        "study": 0,
+        "enterteimant": 0,
+        "other": 499.0
+    },
+    "transaction": [
+        {
+            "name expense": "phone case",
+            "price expense": 499.0,
+            "type expense": "other",
+            "date expanse": "21:00"
+        },
+        {
+            "name expense": "frying pan",
+            "price expense": 1699.0,
+            "type expense": "house goods",
+            "date expanse": "20:00"
+        }
+    ]
+}
