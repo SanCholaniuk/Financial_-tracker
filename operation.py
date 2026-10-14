@@ -1,4 +1,5 @@
 """Operation file"""
+from statistica import House_goods, Food, Study, Enterteimant, Other_goods
 
 def add_income(actualy_balance):
 
@@ -64,57 +65,45 @@ def my_statistic(transactions):
 
     """Function for cost statistics"""
     
-    house_goods = 0
-    food = 0   
-    study = 0 
-    enterteimant = 0
-    other = 0
+    statistic = {
+        "house goods": House_goods(),
+        "food": Food(),
+        "study": Study(),
+        "enterteimant": Enterteimant(),
+        "other": Other_goods()
+    }
+
 
     print("\n")
 
     for expense in transactions:
-
-        if expense["type expense"] == "house goods":
-            house_goods += expense["price expense"]
-
-        elif expense["type expense"] == "food":
-            food += expense["price expense"]
-    
-        elif expense["type expense"] == "study":
-            study += expense["price expense"]
-
-        elif expense["type expense"] == "enterteimant":
-            enterteimant += expense["price expense"]
-    
-        else:
-            other += expense["price expense"]
+            good = statistic[expense["type expense"]]
+            good += expense
    
-    statistic = {
-        "house goods": house_goods,
-        "food": food,
-        "study": study,
-        "enterteimant": enterteimant,
-        "other":other
+
+    full_statistic = {
+        "house goods": statistic["house goods"].get_result(),
+        "food": statistic["food"].get_result(),
+        "study": statistic["study"].get_result(),
+        "enterteimant": statistic["enterteimant"].get_result(),
+        "other": statistic["other"].get_result()
     }
 
-    print(statistic)
+    print(full_statistic)
 
-    return statistic
+    return full_statistic
 
 
-def most_expenses(statistic):
+def most_expenses(full_statistic):
 
     """Function for most expenses"""
 
     most_statistic = 0
     value_statistic = ""
 
-    for expense in statistic.values():
-        if most_statistic < expense:
-            most_statistic = expense
-
-    for key, value in statistic.items():
-        if value == most_statistic:
+    for key, value in full_statistic.items():
+        if most_statistic < value:
+            most_statistic = value
             value_statistic = key
         
 

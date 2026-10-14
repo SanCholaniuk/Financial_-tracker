@@ -1,4 +1,3 @@
-"""===Main menu==="""
 from operation import *
 import json
 
@@ -6,13 +5,13 @@ try:
     with open("C:\\Users\\Admin\\Desktop\\financial_ tracker\\tracker.json", "r") as file:
         data = json.load(file)
         actualy_balance = data["actualy balance"]
-        statistic = data["statistics"]
+        full_statistic = data["full statistic"]
         transactions = data["transaction"]
 
 
 except FileNotFoundError:
     actualy_balance = 0
-    statistic = {}
+    full_statistic = {}
     transactions = []
     
 while True:
@@ -42,17 +41,17 @@ while True:
         show_all_transaction(transactions)
 
     elif action == "5" or action == "statistics":
-        statistic = my_statistic(transactions)
+        full_statistic = my_statistic(transactions)
 
     elif action == "6" or action == "the most expenses":
-        most_expenses(statistic)
+        most_expenses(full_statistic)
     
     elif action == "7" or action == "exit":
         print("\nYou close the programe. Your data is saved.")
 
         data = {
             "actualy balance": actualy_balance,
-            "statistics": statistic,
+            "full statistic": full_statistic,
             "transaction": transactions
         }
 

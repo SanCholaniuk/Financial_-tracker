@@ -1,24 +1,24 @@
 {
-    "actualy balance": 802.0,
-    "statistics": {
-        "house goods": 1699.0,
-        "food": 0,
-        "study": 0,
-        "enterteimant": 0,
-        "other": 499.0
+    "actualy balance": 3002.99,
+    "full statistic": {
+        "house goods": 0.0,
+        "food": 0.0,
+        "study": 0.0,
+        "enterteimant": 999.0,
+        "other": 1499.0
     },
     "transaction": [
         {
-            "name expense": "phone case",
-            "price expense": 499.0,
-            "type expense": "other",
-            "date expanse": "21:00"
+            "name expense": "Warcraft 3",
+            "price expense": 999.0,
+            "type expense": "enterteimant",
+            "date expanse": "14.10.2026"
         },
         {
-            "name expense": "frying pan",
-            "price expense": 1699.0,
-            "type expense": "house goods",
-            "date expanse": "20:00"
+            "name expense": "colection figure",
+            "price expense": 1499.0,
+            "type expense": "other",
+            "date expanse": "14.10.2026"
         }
     ]
 }
