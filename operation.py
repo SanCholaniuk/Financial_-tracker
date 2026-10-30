@@ -27,6 +27,7 @@ def add_expense(transactions, actualy_balance):
         print("\nExpense must be greater than zero")
         return transactions, actualy_balance
 
+
     if price_expense > actualy_balance:
         print("\nCan`t buy a god. Not enough funds")
         return transactions, actualy_balance
@@ -82,11 +83,11 @@ def my_statistic(transactions):
    
 
     full_statistic = {
-        "house goods": statistic["house goods"].get_result(),
-        "food": statistic["food"].get_result(),
-        "study": statistic["study"].get_result(),
-        "enterteimant": statistic["enterteimant"].get_result(),
-        "other": statistic["other"].get_result()
+        "house goods": statistic["house goods"].result_expense(),
+        "food": statistic["food"].result_expense(),
+        "study": statistic["study"].result_expense(),
+        "enterteimant": statistic["enterteimant"].result_expense(),
+        "other": statistic["other"].result_expense()
     }
 
     print(full_statistic)

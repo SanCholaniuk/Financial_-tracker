@@ -1,11 +1,11 @@
 {
-    "actualy balance": 3002.99,
+    "actualy balance": 988.9999999999998,
     "full statistic": {
-        "house goods": 0.0,
-        "food": 0.0,
-        "study": 0.0,
+        "house goods": 1599.0,
+        "food": 79.99,
+        "study": 999.0,
         "enterteimant": 999.0,
-        "other": 1499.0
+        "other": 1958.0
     },
     "transaction": [
         {
@@ -19,6 +19,30 @@
             "price expense": 1499.0,
             "type expense": "other",
             "date expanse": "14.10.2026"
+        },
+        {
+            "name expense": "eye drops",
+            "price expense": 459.0,
+            "type expense": "other",
+            "date expanse": "29.10.2026"
+        },
+        {
+            "name expense": "chair",
+            "price expense": 1599.0,
+            "type expense": "house goods",
+            "date expanse": "30.10.2026"
+        },
+        {
+            "name expense": "book \"Python study\"",
+            "price expense": 999.0,
+            "type expense": "study",
+            "date expanse": "30.10.2026"
+        },
+        {
+            "name expense": "coca cola",
+            "price expense": 79.99,
+            "type expense": "food",
+            "date expanse": "30.10.2026"
         }
     ]
 }

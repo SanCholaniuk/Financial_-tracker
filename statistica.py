@@ -7,8 +7,9 @@ class Statistic:
 
     def __iadd__(self, item):
         self.value += item["price expense"]
+        return self
 
-    def get_result(self):
+    def result_expense(self):
         return self.value
 
 class House_goods(Statistic):
@@ -25,5 +26,3 @@ class Enterteimant(Statistic):
 
 class Other_goods(Statistic):
     category = "other goods"
-
-
