@@ -1,0 +1,18 @@
+{
+    "actual balance": 100.0,
+    "transactions": [
+        {
+            "name_expense": "flowers",
+            "price_expense": 900.0,
+            "type_expense": "other",
+            "date_expense": "2026-11-08 18:50:33"
+        }
+    ],
+    "full statistic": {
+        "house_goods": 0.0,
+        "food": 0.0,
+        "study": 0.0,
+        "entertainment": 0.0,
+        "other": 900.0
+    }
+}
