@@ -23,7 +23,7 @@ while True:
         database_config = {
         "dbname": "financial_tracker",
         "user": "postgres",
-        "password": "23Sa10Ch",
+        "password": "password",
         "host": "localhost",
         "port": "5432",
     } 
