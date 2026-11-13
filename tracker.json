@@ -1,48 +1,42 @@
 {
-    "actualy balance": 988.9999999999998,
-    "full statistic": {
-        "house goods": 1599.0,
-        "food": 79.99,
-        "study": 999.0,
-        "enterteimant": 999.0,
-        "other": 1958.0
-    },
-    "transaction": [
+    "actual balance": 51.03,
+    "transactions": [
         {
-            "name expense": "Warcraft 3",
-            "price expense": 999.0,
-            "type expense": "enterteimant",
-            "date expanse": "14.10.2026"
+            "name_expense": "flowers",
+            "price_expense": 900.0,
+            "type_expense": "other",
+            "date_expense": "2026-11-08 18:50:33"
         },
         {
-            "name expense": "colection figure",
-            "price expense": 1499.0,
-            "type expense": "other",
-            "date expanse": "14.10.2026"
+            "name_expense": "Bloodborne",
+            "price_expense": 949.0,
+            "type_expense": "entertainment",
+            "date_expense": "2026-11-13 21:15:24"
         },
         {
-            "name expense": "eye drops",
-            "price expense": 459.0,
-            "type expense": "other",
-            "date expanse": "29.10.2026"
+            "name_expense": "Pen",
+            "price_expense": 59.99,
+            "type_expense": "study",
+            "date_expense": "2026-11-13 21:26:09"
         },
         {
-            "name expense": "chair",
-            "price expense": 1599.0,
-            "type expense": "house goods",
-            "date expanse": "30.10.2026"
+            "name_expense": "Pencil",
+            "price_expense": 49.99,
+            "type_expense": "study",
+            "date_expense": "2026-11-13 21:27:43"
         },
         {
-            "name expense": "book \"Python study\"",
-            "price expense": 999.0,
-            "type expense": "study",
-            "date expanse": "30.10.2026"
-        },
-        {
-            "name expense": "coca cola",
-            "price expense": 79.99,
-            "type expense": "food",
-            "date expanse": "30.10.2026"
+            "name_expense": "Morshynska",
+            "price_expense": 32.0,
+            "type_expense": "food",
+            "date_expense": "2026-11-13 21:28:54"
         }
-    ]
+    ],
+    "full statistic": {
+        "house goods": 0.0,
+        "food": 0.0,
+        "study": 109.98,
+        "entertainment": 949.0,
+        "other": 900.0
+    }
 }

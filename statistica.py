@@ -6,7 +6,7 @@ class Statistic:
         self.value = 0.0
 
     def __iadd__(self, item):
-        self.value += item["price expense"]
+        self.value += item["price_expense"]
         return self
 
     def result_expense(self):
@@ -21,8 +21,8 @@ class Food(Statistic):
 class Study(Statistic): 
     category = "study"
 
-class Enterteimant(Statistic):
-    category = "enterteimant"
+class Entertainment(Statistic):
+    category = "entertainment"
 
 class Other_goods(Statistic):
     category = "other goods"

@@ -1,18 +1,46 @@
 from operation import *
-import json
+from json_storage import *
+from db_storage import *
 
-try:
-    with open("C:\\Users\\Admin\\Desktop\\financial_ tracker\\tracker.json", "r") as file:
-        data = json.load(file)
-        actualy_balance = data["actualy balance"]
-        full_statistic = data["full statistic"]
-        transactions = data["transaction"]
+"""===A loop for the user to choose where it is best for them to store their information==="""
+
+print("Choose the source of data usage and storage\n")
+
+while True:
+
+    choise_source = input("Enter file or database(1 or 2)? - ").lower()
 
 
-except FileNotFoundError:
-    actualy_balance = 0
-    full_statistic = {}
-    transactions = []
+    if choise_source == "1" or choise_source == "file":
+
+        source = JSON_Storage("C:\\Users\\Admin\\Desktop\\financial_tracker\\tracker.json")
+        actual_balance, transactions, full_statistic = source.load()
+
+        break
+
+
+    elif choise_source == "2" or choise_source == "database":
+
+        database_config = {
+        "dbname": "financial_tracker",
+        "user": "postgres",
+        "password": "password",
+        "host": "localhost",
+        "port": "5432",
+    } 
+
+        source = DB_Storage(database_config)
+        actual_balance, transactions, _ = source.load()
+        full_statistic = source.get_statistic()
+        
+        break
+
+    else:
+        print("Please, Choose the source of data usage and storage")
+
+new_transactions = []
+
+"""===Function of tracker==="""
     
 while True:
 
@@ -29,16 +57,17 @@ while True:
     action = input("Enter your action(number or full name) - ").lower()
 
     if action == "1" or action == "add income":
-        actualy_balance = add_income(actualy_balance)
+        actual_balance = add_income(actual_balance)
 
     elif action == "2" or action == "add expense":
-        transactions, actualy_balance = add_expense(transactions, actualy_balance)
+        transactions, _ , actual_balance = add_expense(transactions, new_transactions, actual_balance)
+        full_statistic = my_statistic(transactions)
 
     elif action == "3" or action == "show balance":
-        show_balance(actualy_balance)   
+        show_balance(actual_balance)   
 
-    elif action == "4" or action == "show all transaction":
-        show_all_transaction(transactions)
+    elif action == "4" or action == "show all transactions":
+        show_all_transactions(transactions)
 
     elif action == "5" or action == "statistics":
         full_statistic = my_statistic(transactions)
@@ -47,18 +76,13 @@ while True:
         most_expenses(full_statistic)
     
     elif action == "7" or action == "exit":
-        print("\nYou close the programe. Your data is saved.")
 
-        data = {
-            "actualy balance": actualy_balance,
-            "full statistic": full_statistic,
-            "transaction": transactions
-        }
+            result = source.save(actual_balance, transactions,  new_transactions, full_statistic)
 
-        with open("C:\\Users\\Admin\\Desktop\\financial_ tracker\\tracker.json", "w") as file:
-            json.dump(data, file, indent = 4)  
+            if result and isinstance(source, DB_Storage):
+                new_transactions.clear()
 
-        break
-
+            break
+        
     else:
         print("\nPlease, choose the function")
